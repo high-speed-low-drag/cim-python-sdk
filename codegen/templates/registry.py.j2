@@ -1,0 +1,19 @@
+"""GUID and name lookup tables for the generated model. Generated code: do not edit."""
+
+BY_GUID: dict[str, str] = {
+{% for k, v in by_guid %}
+    {{ k }}: {{ v }},
+{% endfor %}
+}
+
+BY_NAME: dict[str, str] = {
+{% for k, v in by_name %}
+    {{ k }}: {{ v }},
+{% endfor %}
+}
+
+MODEL_VERSIONS: dict[str, str] = {
+{% for k, v in versions %}
+    {{ k }}: {{ v }},
+{% endfor %}
+}

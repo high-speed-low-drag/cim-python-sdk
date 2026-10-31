@@ -1,0 +1,28 @@
+cim-python-sdk
+Copyright 2026 Michael Liu
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Generated code under src/cim_python_sdk/model/ and the IR snapshot under codegen/snapshot/ are
+derived from the IEC CIM UML model (CIM100: iec61970cim17v40_iec61968cim13v13b_iec62325cim03v17b,
+published by the UCA International Users Group, CIM Users Group). The UML project file states:
+"The entire work provided in the UML project file is dedicated to the public domain. As such,
+it is Open Source document using an Apache 2.0 License." The model file itself is not
+redistributed here; tools/fetch_model.py downloads it from its pinned public source.
+
+examples/mvlv-networks reads data from Team-Nando/MV-LV-Networks
+(https://github.com/Team-Nando/MV-LV-Networks, BSD-3-Clause). That data is not redistributed
+here.
+
+src/cim_python_sdk/profiles/data/cgmes_3_0.json is derived from the CGMES 3.0 vocabularies (RDFS2020) of
+entsoe/CGMES-AP (https://github.com/entsoe/CGMES-AP, Apache-2.0, commit
+e96dd4e323b1e2236e141dd03bf9adea81672e00; IEC 61970-600-2:2021 profiles). The European extension
+classes of the generated model come from the EA model of cimug-org/CGMES-CIM17
+(https://github.com/cimug-org/CGMES-CIM17, Apache-2.0, commit
+1c7708f5d3bde53e154201707f31961573868cf2). Neither is redistributed here; tools/fetch_profiles.py
+downloads them from their pinned public sources.
+
+No ENTSO-E test data is redistributed. The opt-in test of the ENTSO-E CGMES 3.0 Conformity
+Assessment Test Configuration (MicroGrid BaseCase v3.0.2, owned by ENTSO-E) downloads the files from
+a pinned public copy and checks their sha256 at test time.
+

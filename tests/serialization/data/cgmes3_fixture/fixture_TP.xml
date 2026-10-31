@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hand-written CGMES 3.0 test fixture for cim-python-sdk (Apache-2.0). Names, ids and values are
+     made up; the layout follows the CGMES 3.0 file conventions (md:FullModel header, rdf:ID with
+     IdentifiedObject.mRID in the defining file, rdf:about elsewhere). Ids are uuid5 of
+     "cim100-test:<name>" (tests/serialization/cgmes_network.uid). -->
+<rdf:RDF xmlns:cim="http://iec.ch/TC57/CIM100#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:eu="http://iec.ch/TC57/CIM100-European#">
+  <md:FullModel rdf:about="urn:uuid:009682d3-386a-58f0-87f1-dcc37f652706">
+    <md:Model.created>2026-02-10T11:06:40Z</md:Model.created>
+    <md:Model.scenarioTime>2026-02-10T09:30:00Z</md:Model.scenarioTime>
+    <md:Model.description>cim-python-sdk hand-written CGMES 3.0 fixture</md:Model.description>
+    <md:Model.modelingAuthoritySet>http://example.com/cgmes-fixture</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://iec.ch/TC57/ns/CIM/Topology-EU/3.0</md:Model.profile>
+    <md:Model.version>001</md:Model.version>
+    <md:Model.DependentOn rdf:resource="urn:uuid:077894a8-6766-5eb2-8405-af48c9755ab1" />
+  </md:FullModel>
+  <cim:TopologicalNode rdf:ID="_a0ff607d-2a30-54d3-aa4e-e597d03c3114">
+    <cim:IdentifiedObject.name>RIV_132_TN1</cim:IdentifiedObject.name>
+    <cim:TopologicalNode.BaseVoltage rdf:resource="#_341d2676-31c4-5536-ac5c-a0799a945545" />
+    <cim:TopologicalNode.ConnectivityNodeContainer rdf:resource="#_e171b36c-42c9-5188-baef-a429d4e9724a" />
+    <cim:IdentifiedObject.mRID>a0ff607d-2a30-54d3-aa4e-e597d03c3114</cim:IdentifiedObject.mRID>
+  </cim:TopologicalNode>
+  <cim:ConnectivityNode rdf:about="#_75dbcf54-ffb6-5b19-8751-1a7cf5c7deb0">
+    <cim:ConnectivityNode.TopologicalNode rdf:resource="#_a0ff607d-2a30-54d3-aa4e-e597d03c3114" />
+  </cim:ConnectivityNode>
+  <cim:Terminal rdf:about="#_3a4cadb7-04ef-5c39-90d1-e6b2d3b244f1">
+    <cim:Terminal.TopologicalNode rdf:resource="#_a0ff607d-2a30-54d3-aa4e-e597d03c3114" />
+  </cim:Terminal>
+</rdf:RDF>

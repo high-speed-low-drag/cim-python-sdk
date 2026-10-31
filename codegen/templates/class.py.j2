@@ -1,0 +1,88 @@
+"""{{ header }}"""
+
+{{ imports }}
+
+
+class {{ name }}({{ base }}):
+    {{ doc }}
+
+    __slots__ = {{ slots }}
+{% if statics or attrs %}
+
+{% for s in statics %}
+    {{ s.name }}: ClassVar[{{ s.type }}] = {{ s.default }}
+{% endfor %}
+{% for a in attrs %}
+{% if a.note %}
+    # {{ a.note }}
+{% endif %}
+    {{ a.name }}: {{ a.type }}{{ a.comment }}
+{% endfor %}
+{% endif %}
+{% if datatype_attrs %}
+
+{% for d in datatype_attrs %}
+    {{ d }}
+{% endfor %}
+{% endif %}
+{% if ends %}
+
+{% for e in ends %}
+    {{ e.name }}: {{ e.cls }}[{{ e.target }}] = {{ e.cls }}(
+        EndMeta(
+            name={{ e.q_name }},
+            cim_role={{ e.cim_role }},
+            target={{ e.target_ref }},
+            many={{ e.many }},
+            lower={{ e.lower }},
+            upper={{ e.upper }},
+            inverse={{ e.inverse }},
+            aggregation={{ e.aggregation }},
+{% if e.namespace %}
+            namespace={{ e.namespace }},
+{% endif %}
+        )
+    )
+{% endfor %}
+{% endif %}
+
+    _cim_meta = ClassMeta(
+        cim_name={{ cim_name }},
+        package={{ package }},
+        guid={{ guid }},
+{% if kind_arg %}
+        kind={{ kind_arg }},
+{% endif %}
+{% if deprecated %}
+        deprecated=True,
+{% endif %}
+{% if namespace %}
+        namespace={{ namespace }},
+{% endif %}
+{% if meta_attrs %}
+        attributes=({% for m in meta_attrs %}{{ m }}, {% endfor %}),
+{% endif %}
+{% if end_names %}
+        ends=({% for n in end_names %}{{ n }}.meta, {% endfor %}),
+{% endif %}
+    )
+{% if params %}
+
+    def __init__(
+        self,
+        *,
+{% for p in params %}
+        {{ p.name }}: {{ p.type }} = {{ p.default }},
+{% endfor %}
+        **kwargs: Any,
+    ) -> None:
+        super().__init__(**kwargs)
+{% for line in init_body %}
+        {{ line }}
+{% endfor %}
+{% endif %}
+{% for m in methods %}
+
+    def {{ m.name }}(self{{ m.args }}) -> {{ m.ret }}:
+        return {{ m.body }}
+{% endfor %}

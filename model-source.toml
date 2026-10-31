@@ -1,0 +1,16 @@
+# Pinned CIM100 EA model (SQLite .qea). Never committed; cached in build/model/.
+filename = "iec61970cim17v40_iec61968cim13v13b_iec62325cim03v17b_CIM100.1.1.1.qea"
+size = 42672128  # verified: bytes of the sha256-matching primary file (PLAN.md says 42663936)
+
+# Primary first, then mirror. Bytes differ between the two, content is identical.
+[[sources]]
+name = "primary"
+url = "https://raw.githubusercontent.com/cimug-org/CIMTool/2a47a3778963da9389c9d50b91e92439470021e4/CSharpEFTestProject/CSharpEFTestProject/Schema/iec61970cim17v40_iec61968cim13v13b_iec62325cim03v17b_CIM100.1.1.1.qea"
+commit = "2a47a3778963da9389c9d50b91e92439470021e4"
+sha256 = "677355eaad0c7a1321788c0301e0e24c66c8567c5560dab8d7788974c98cf710"
+
+[[sources]]
+name = "mirror"
+url = "https://raw.githubusercontent.com/netbeheernederland/tc57cim/91d32217c396bbaa379bc29a5e8bc3cda6f17f07/src/data/iec61970cim17v40_iec61968cim13v13b_iec62325cim03v17b_CIM100.1.1.1.qea"
+commit = "91d32217c396bbaa379bc29a5e8bc3cda6f17f07"
+sha256 = "feb5c3c51b8efc2e66bc917b3f5be43bf1d0e6434cb235da5b486869a5944454"

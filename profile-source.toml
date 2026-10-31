@@ -1,0 +1,93 @@
+# Pinned CGMES 3.0 profiles (IEC 61970-600-2:2021): the official ENTSO-E RDFS2020 vocabularies.
+# Never committed; cached in build/profiles/. The derived snapshot
+# src/cim_python_sdk/profiles/data/cgmes_3_0.json is committed. Keyword, profile URI (owl:versionIRI, the
+# md:Model.profile of an instance file), version, classes, properties and the fixed unit
+# multipliers of the datatypes (cims:isFixed) are all read from the files (tools/dump_profiles.py).
+repo = "entsoe/CGMES-AP"
+commit = "e96dd4e323b1e2236e141dd03bf9adea81672e00"
+license = "Apache-2.0"
+url = "https://raw.githubusercontent.com/entsoe/CGMES-AP/{commit}/CGMES/RDFS/{file}"
+
+[[profiles]]
+keyword = "EQ"
+file = "61970-600-2_Equipment-AP-Voc-RDFS2020.rdf"
+sha256 = "e95c02b1eca667dabf7c8bf0e0a0e47f0b4813c8a3899eb55e50608fdb4ba27d"
+size = 584337
+
+[[profiles]]
+keyword = "DL"
+file = "61970-600-2_DiagramLayout-AP-Voc-RDFS2020.rdf"
+sha256 = "8dbf4ba6ac74a30bb66a24b158fa4469bea6212703fed010774a37a4ff2269bf"
+size = 102712
+
+[[profiles]]
+keyword = "DY"
+file = "61970-600-2_Dynamics-AP-Voc-RDFS2020.rdf"
+sha256 = "a077ff7797f73fe2ee21ba085834224c7d6d7948c08f292d0e78cd4b50e8d0a6"
+size = 2270863
+
+[[profiles]]
+keyword = "EQBD"
+file = "61970-600-2_EquipmentBoundary-AP-Voc-RDFS2020.rdf"
+sha256 = "094299cc68aaa5b0ac82c57d8a093f42a08a2d31a647fab9f5d58223a95aeac1"
+size = 109925
+
+[[profiles]]
+keyword = "GL"
+file = "61970-600-2_GeographicalLocation-AP-Voc-RDFS2020.rdf"
+sha256 = "567bdf586b216e2921987fcd4cf294e4666d06008e4033e4beabb1d8d199161f"
+size = 40982
+
+[[profiles]]
+keyword = "OP"
+file = "61970-600-2_Operation-AP-Voc-RDFS2020.rdf"
+sha256 = "a88f62778d3f17a61ece4d106b4352fffa4e8811028238d2589aa7a11d1847cb"
+size = 155329
+
+[[profiles]]
+keyword = "SC"
+file = "61970-600-2_ShortCircuit-AP-Voc-RDFS2020.rdf"
+sha256 = "9346107464a1f848473411f31666ccd9621d4e1c2048cdfc38b34bd866123f5d"
+size = 199586
+
+[[profiles]]
+keyword = "SV"
+file = "61970-600-2_StateVariables-AP-Voc-RDFS2020.rdf"
+sha256 = "ff40b3292c4c70f7fa12e15f11c5bd05c524b67016bacba072561bafc296a0c7"
+size = 119473
+
+[[profiles]]
+keyword = "SSH"
+file = "61970-600-2_SteadyStateHypothesis-AP-Voc-RDFS2020.rdf"
+sha256 = "a9577ccd79007459a23929ff5dca6c3b6c8135563565b5ba02f4797d701ee905"
+size = 207359
+
+[[profiles]]
+keyword = "TP"
+file = "61970-600-2_Topology-AP-Voc-RDFS2020.rdf"
+sha256 = "da7de6cf47958cc00413bc17b1ba2a413352ca40cf07daaba77d1f7b7f8bd2bf"
+size = 30750
+
+# Known errors of the pinned vocabularies, applied by tools/dump_profiles.py. Each must still
+# apply (the build fails once upstream fixes it, so the entry can be removed).
+[[corrections]]
+profile = "SSH"
+class = "Equipment"
+add_stereotype = "description"
+reason = """SSH lists Equipment as concrete without the Description stereotype, although SSH only
+describes equipment defined in EQ (the ENTSO-E sample SSH files write <cim:Equipment rdf:about>, and
+the CIMTool OWL of the same profile has the stereotype). Without it an SSH Equipment element would
+define a second object. Reported as https://github.com/entsoe/CGMES-AP/issues/59."""
+
+# The CGMES-CIM17 EA model (SQLite .qea: CIM17-2, CGMES 3.1 and NC extensions) of
+# cimug-org/CGMES-CIM17. tools/dump_eu_ir.py reads its European extension package
+# EuropeanCIMExtensions/ExtIEC61970/ExtEuBase (ExtIEC61970Version 3.0, the eu: members of the
+# CGMES 3.0 profiles) into codegen/snapshot/eu_ir.json. Never committed; cached in build/profiles/.
+[schema]
+repo = "cimug-org/CGMES-CIM17"
+commit = "1c7708f5d3bde53e154201707f31961573868cf2"
+license = "Apache-2.0"
+file = "CIM17-2_CGMES31v01_PROF-20v02_NC23v66_MS10v01_DES10v01.qea"
+url = "https://raw.githubusercontent.com/cimug-org/CGMES-CIM17/{commit}/CGMES-CIM17/Schema/{file}"
+sha256 = "549089101e387706d687e95c0cd06d75e6a0265f7a8cfeb6b311d9eed1c2793f"
+size = 50151424

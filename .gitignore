@@ -1,0 +1,9 @@
+build/
+.venv/
+__pycache__/
+*.qea
+*.eap
+.pytest_cache/
+.ruff_cache/
+examples/mvlv-networks/out/
+examples/mvlv-networks/MV-LV-Networks/

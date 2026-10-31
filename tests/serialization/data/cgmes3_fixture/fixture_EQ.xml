@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hand-written CGMES 3.0 test fixture for cim-python-sdk (Apache-2.0). Names, ids and values are
+     made up; the layout follows the CGMES 3.0 file conventions (md:FullModel header, rdf:ID with
+     IdentifiedObject.mRID in the defining file, rdf:about elsewhere). Ids are uuid5 of
+     "cim100-test:<name>" (tests/serialization/cgmes_network.uid). -->
+<rdf:RDF xmlns:cim="http://iec.ch/TC57/CIM100#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:eu="http://iec.ch/TC57/CIM100-European#">
+  <md:FullModel rdf:about="urn:uuid:0e70c28a-76be-5eb5-8ac9-d613adbe6915">
+    <md:Model.created>2026-02-10T11:05:12Z</md:Model.created>
+    <md:Model.scenarioTime>2026-02-10T09:30:00Z</md:Model.scenarioTime>
+    <md:Model.description>cim-python-sdk hand-written CGMES 3.0 fixture</md:Model.description>
+    <md:Model.modelingAuthoritySet>http://example.com/cgmes-fixture</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://iec.ch/TC57/ns/CIM/CoreEquipment-EU/3.0</md:Model.profile>
+    <md:Model.version>001</md:Model.version>
+    <md:Model.DependentOn rdf:resource="urn:uuid:fda6722c-bba4-5e22-a450-18169adbccb4" />
+    <md:Model.profile>http://iec.ch/TC57/ns/CIM/ShortCircuit-EU/3.0</md:Model.profile>
+  </md:FullModel>
+  <cim:ConnectivityNode rdf:ID="_75dbcf54-ffb6-5b19-8751-1a7cf5c7deb0">
+    <cim:IdentifiedObject.name>Riverside 132 kV bus</cim:IdentifiedObject.name>
+    <eu:IdentifiedObject.shortName>RIV-B1</eu:IdentifiedObject.shortName>
+    <cim:ConnectivityNode.ConnectivityNodeContainer rdf:resource="#_e171b36c-42c9-5188-baef-a429d4e9724a" />
+    <cim:IdentifiedObject.mRID>75dbcf54-ffb6-5b19-8751-1a7cf5c7deb0</cim:IdentifiedObject.mRID>
+  </cim:ConnectivityNode>
+  <cim:Terminal rdf:ID="_3a4cadb7-04ef-5c39-90d1-e6b2d3b244f1">
+    <cim:IdentifiedObject.name>Riverside busbar terminal</cim:IdentifiedObject.name>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
+    <cim:Terminal.ConductingEquipment rdf:resource="#_a7a43c65-7ce6-5229-82e8-9ea344b3d836" />
+    <cim:Terminal.ConnectivityNode rdf:resource="#_75dbcf54-ffb6-5b19-8751-1a7cf5c7deb0" />
+    <cim:IdentifiedObject.mRID>3a4cadb7-04ef-5c39-90d1-e6b2d3b244f1</cim:IdentifiedObject.mRID>
+  </cim:Terminal>
+  <cim:ACLineSegment rdf:ID="_22df84b9-0acd-505b-9d8f-da0fb2591566">
+    <cim:IdentifiedObject.name>Riverside-Hilltop</cim:IdentifiedObject.name>
+    <cim:IdentifiedObject.description>overhead line, double circuit</cim:IdentifiedObject.description>
+    <eu:IdentifiedObject.shortName>RIV-HIL</eu:IdentifiedObject.shortName>
+    <cim:Equipment.aggregate>false</cim:Equipment.aggregate>
+    <cim:Equipment.EquipmentContainer rdf:resource="#_0dc78a30-7839-5717-aa66-b10d270d2709" />
+    <cim:ConductingEquipment.BaseVoltage rdf:resource="#_341d2676-31c4-5536-ac5c-a0799a945545" />
+    <cim:Conductor.length>42.5</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>8.6E-05</cim:ACLineSegment.b0ch>
+    <cim:ACLineSegment.bch>1.21E-04</cim:ACLineSegment.bch>
+    <cim:ACLineSegment.g0ch>0</cim:ACLineSegment.g0ch>
+    <cim:ACLineSegment.gch>0</cim:ACLineSegment.gch>
+    <cim:ACLineSegment.r>3.4</cim:ACLineSegment.r>
+    <cim:ACLineSegment.r0>9.8</cim:ACLineSegment.r0>
+    <cim:ACLineSegment.shortCircuitEndTemperature>80</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>16.9</cim:ACLineSegment.x>
+    <cim:ACLineSegment.x0>51.2</cim:ACLineSegment.x0>
+    <cim:IdentifiedObject.mRID>22df84b9-0acd-505b-9d8f-da0fb2591566</cim:IdentifiedObject.mRID>
+  </cim:ACLineSegment>
+  <cim:CurveData rdf:ID="_b6bd9ca3-113c-5de3-8ef3-9e8edff30cbd">
+    <cim:CurveData.xvalue>0</cim:CurveData.xvalue>
+    <cim:CurveData.y1value>-40</cim:CurveData.y1value>
+    <cim:CurveData.y2value>45</cim:CurveData.y2value>
+    <cim:CurveData.Curve rdf:resource="#_a00c66d3-5d3f-54c6-b996-3794431b92ab" />
+  </cim:CurveData>
+  <cim:OperationalLimitType rdf:ID="_efe389c9-aa59-567e-a783-1aed8190e645">
+    <cim:IdentifiedObject.name>PATL</cim:IdentifiedObject.name>
+    <eu:IdentifiedObject.shortName>PATL</eu:IdentifiedObject.shortName>
+    <cim:OperationalLimitType.direction rdf:resource="http://iec.ch/TC57/CIM100#OperationalLimitDirectionKind.absoluteValue" />
+    <eu:OperationalLimitType.kind rdf:resource="http://iec.ch/TC57/CIM100-European#LimitKind.patl" />
+    <cim:IdentifiedObject.mRID>efe389c9-aa59-567e-a783-1aed8190e645</cim:IdentifiedObject.mRID>
+    <cim:OperationalLimitType.isInfiniteDuration>true</cim:OperationalLimitType.isInfiniteDuration>
+  </cim:OperationalLimitType>
+</rdf:RDF>

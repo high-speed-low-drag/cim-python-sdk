@@ -1,0 +1,562 @@
+{
+ "associations": [
+  {
+   "ends": [
+    {
+     "cardinality": "0..*",
+     "lower": 0,
+     "navigable": true,
+     "notes": "A solar generating unit or units may be a member of a solar power plant.",
+     "owner": "{FCAC387C-33C5-4446-AD70-4E6B02809D92}",
+     "owner_aggregation": "none",
+     "role": "SolarGeneratingUnits",
+     "target": "{C5A085AB-DDD3-41b0-91DE-9071B466AE9A}",
+     "upper": null
+    },
+    {
+     "cardinality": "0..1",
+     "lower": 0,
+     "navigable": false,
+     "notes": "A solar power plant may have solar generating units.",
+     "owner": "{C5A085AB-DDD3-41b0-91DE-9071B466AE9A}",
+     "owner_aggregation": "none",
+     "role": "SolarPowerPlant",
+     "target": "{FCAC387C-33C5-4446-AD70-4E6B02809D92}",
+     "upper": 1
+    }
+   ],
+   "guid": "{69FC2FE8-4AC6-4765-BFE9-3F82F42C66A2}",
+   "name": null,
+   "namespace": "eu",
+   "notes": "",
+   "stereotypes": [
+    "European"
+   ],
+   "type": "Association"
+  },
+  {
+   "ends": [
+    {
+     "cardinality": "0..*",
+     "lower": 0,
+     "navigable": true,
+     "notes": "A wind generating unit or units may be a member of a wind power plant.",
+     "owner": "{52E21930-D9C8-4243-AF07-B57B20CE94B0}",
+     "owner_aggregation": "none",
+     "role": "WindGeneratingUnits",
+     "target": "{7B2E09D8-C9AD-4228-B014-0AA2DE3D4BDE}",
+     "upper": null
+    },
+    {
+     "cardinality": "0..1",
+     "lower": 0,
+     "navigable": false,
+     "notes": "A wind power plant may have wind generating units.",
+     "owner": "{7B2E09D8-C9AD-4228-B014-0AA2DE3D4BDE}",
+     "owner_aggregation": "none",
+     "role": "WindPowerPlant",
+     "target": "{52E21930-D9C8-4243-AF07-B57B20CE94B0}",
+     "upper": 1
+    }
+   ],
+   "guid": "{C3DFC079-783B-405e-A5ED-12FF2FB8D775}",
+   "name": null,
+   "namespace": "eu",
+   "notes": "",
+   "stereotypes": [
+    "European"
+   ],
+   "type": "Association"
+  },
+  {
+   "ends": [
+    {
+     "cardinality": "1",
+     "lower": 1,
+     "navigable": true,
+     "notes": "The connectivity node that is designated as a boundary point.",
+     "owner": "{22106B32-87E4-4296-B0FC-1F9DB3D9D70A}",
+     "owner_aggregation": "none",
+     "role": "ConnectivityNode",
+     "target": "{8BCACC36-B2DD-4c2a-A2AE-CFDF43731FC2}",
+     "upper": 1
+    },
+    {
+     "cardinality": "0..1",
+     "lower": 0,
+     "navigable": false,
+     "notes": "The boundary point associated with the connectivity node.",
+     "owner": "{8BCACC36-B2DD-4c2a-A2AE-CFDF43731FC2}",
+     "owner_aggregation": "none",
+     "role": "BoundaryPoint",
+     "target": "{22106B32-87E4-4296-B0FC-1F9DB3D9D70A}",
+     "upper": 1
+    }
+   ],
+   "guid": "{E6A839F4-AB99-4bd7-A40B-BC2C396EFBF7}",
+   "name": null,
+   "namespace": "eu",
+   "notes": "",
+   "stereotypes": [
+    "European"
+   ],
+   "type": "Association"
+  }
+ ],
+ "classifiers": [
+  {
+   "abstract": false,
+   "attributes": [
+    {
+     "default": null,
+     "deprecated": false,
+     "ea_id": 5835,
+     "guid": "{DDC230F1-B1D2-4859-9D8C-2B0078742016}",
+     "is_const": false,
+     "is_static": false,
+     "lower": 0,
+     "name": "kind",
+     "namespace": "eu",
+     "notes": "Types of limits defined in the ENTSO-E Operational Handbook Policy 3.",
+     "stereotypes": [
+      "European"
+     ],
+     "type_guid": "{C6901289-57C7-41a3-AF87-9AA5E788E1CF}",
+     "type_name": "LimitKind",
+     "upper": 1
+    }
+   ],
+   "deprecated": false,
+   "ea_id": 2008,
+   "extends": "{B5E14C75-6C8D-4e7e-9FAF-D49F3BE177B9}",
+   "guid": "{115E5372-7BD3-48bf-A524-52F1115F0729}",
+   "kind": "class",
+   "literals": [],
+   "name": "ExtEuOperationalLimitType",
+   "namespace": "eu",
+   "notes": "Contains an attribute that extends the OperationalLimit by assigning it a specific type.",
+   "package": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase/ExtEuOperationalLimits",
+   "stereotypes": [
+    "European",
+    "ShadowExtension"
+   ],
+   "superclass": null
+  },
+  {
+   "abstract": false,
+   "attributes": [
+    {
+     "default": null,
+     "deprecated": false,
+     "ea_id": 5825,
+     "guid": "{B7DFE484-9B8A-4c77-B2B0-EEF4265F9B11}",
+     "is_const": false,
+     "is_static": false,
+     "lower": 0,
+     "name": "fromEndIsoCode",
+     "namespace": "eu",
+     "notes": "The ISO code of the region which the \"From\" side of the Boundary point belongs to or it is connected to.\nThe ISO code is a two-character country code as defined by ISO 3166 (http://www.iso.org/iso/country_codes). The length of the string is 2 characters maximum.",
+     "stereotypes": [
+      "European"
+     ],
+     "type_guid": "{E50DF78B-84CE-42e9-A275-A956DEF45490}",
+     "type_name": "String",
+     "upper": 1
+    },
+    {
+     "default": null,
+     "deprecated": false,
+     "ea_id": 5826,
+     "guid": "{5F2ABC4F-6D2C-49ff-889F-AC18B465D7E4}",
+     "is_const": false,
+     "is_static": false,
+     "lower": 0,
+     "name": "fromEndName",
+     "namespace": "eu",
+     "notes": "A human readable name with length of the string 64 characters maximum. It covers the following two cases:\n-if the Boundary point is placed on a tie-line, it is the name (IdentifiedObject.name) of the substation at which the \"From\" side of the tie-line is connected to.\n-if the Boundary point is placed in a substation, it is the name (IdentifiedObject.name) of the element (e.g. PowerTransformer, ACLineSegment, Switch, etc.) at which the \"From\" side of the Boundary point is connected to.",
+     "stereotypes": [
+      "European"
+     ],
+     "type_guid": "{E50DF78B-84CE-42e9-A275-A956DEF45490}",
+     "type_name": "String",
+     "upper": 1
+    },
+    {
+     "default": null,
+     "deprecated": false,
+     "ea_id": 5827,
+     "guid": "{E5DFE017-D1EE-42aa-8725-49B48644C516}",
+     "is_const": false,
+     "is_static": false,
+     "lower": 0,
+     "name": "fromEndNameTso",
+     "namespace": "eu",
+     "notes": "Identifies the name of the transmission system operator, distribution system operator or other entity at which the \"From\" side of the interconnection is connected to. The length of the string is 64 characters maximum.",
+     "stereotypes": [
+      "European"
+     ],
+     "type_guid": "{E50DF78B-84CE-42e9-A275-A956DEF45490}",
+     "type_name": "String",
+     "upper": 1
+    },
+    {
+     "default": null,
+     "deprecated": false,
+     "ea_id": 5830,
+     "guid": "{F16EEBFD-4F96-4303-9C89-5FE3CE0FE0C0}",
+     "is_const": false,
+     "is_static": false,
+     "lower": 0,
+     "name": "toEndIsoCode",
+     "namespace": "eu",
+     "notes": "The ISO code of the region which the \"To\" side of the Boundary point belongs to or is connected to.\nThe ISO code is a two-character country code as defined by ISO 3166 (http://www.iso.org/iso/country_codes). The length of the string is 2 characters maximum.",
+     "stereotypes": [
+      "European"
+     ],
+     "type_guid": "{E50DF78B-84CE-42e9-A275-A956DEF45490}",
+     "type_name": "String",
+     "upper": 1
+    },
+    {
+     "default": null,
+     "deprecated": false,
+     "ea_id": 5831,
+     "guid": "{7BE8125A-5A51-4c99-B7E7-2443BA3A987F}",
+     "is_const": false,
+     "is_static": false,
+     "lower": 0,
+     "name": "toEndName",
+     "namespace": "eu",
+     "notes": "A human readable name with length of the string 64 characters maximum. It covers the following two cases:\n-if the Boundary point is placed on a tie-line, it is the name (IdentifiedObject.name) of the substation at which the \"To\" side of the tie-line is connected to.\n-if the Boundary point is placed in a substation, it is the name (IdentifiedObject.name) of the element (e.g. PowerTransformer, ACLineSegment, Switch, etc.) at which the \"To\" side of the Boundary point is connected to.",
+     "stereotypes": [
+      "European"
+     ],
+     "type_guid": "{E50DF78B-84CE-42e9-A275-A956DEF45490}",
+     "type_name": "String",
+     "upper": 1
+    },
+    {
+     "default": null,
+     "deprecated": false,
+     "ea_id": 5832,
+     "guid": "{7281E249-6563-449d-AA46-A73DAE9C74E1}",
+     "is_const": false,
+     "is_static": false,
+     "lower": 0,
+     "name": "toEndNameTso",
+     "namespace": "eu",
+     "notes": "Identifies the name of the transmission system operator, distribution system operator or other entity at which the \"To\" side of the interconnection is connected to. The length of the string is 64 characters maximum.",
+     "stereotypes": [
+      "European"
+     ],
+     "type_guid": "{E50DF78B-84CE-42e9-A275-A956DEF45490}",
+     "type_name": "String",
+     "upper": 1
+    },
+    {
+     "default": null,
+     "deprecated": false,
+     "ea_id": 5828,
+     "guid": "{B2A04A08-0DA8-4b71-94B1-B9106005E85C}",
+     "is_const": false,
+     "is_static": false,
+     "lower": 0,
+     "name": "isDirectCurrent",
+     "namespace": "eu",
+     "notes": "If true, this boundary point is a point of common coupling (PCC) of a direct current (DC) interconnection, otherwise the interconnection is AC (default).",
+     "stereotypes": [
+      "European"
+     ],
+     "type_guid": "{9F8964F1-6C32-465b-A83D-F5A201A291C3}",
+     "type_name": "Boolean",
+     "upper": 1
+    },
+    {
+     "default": null,
+     "deprecated": false,
+     "ea_id": 5829,
+     "guid": "{72BE2719-DA75-412c-8ECF-752D5A3E83FA}",
+     "is_const": false,
+     "is_static": false,
+     "lower": 0,
+     "name": "isExcludedFromAreaInterchange",
+     "namespace": "eu",
+     "notes": "If true, this boundary point is on the interconnection that is excluded from control area interchange calculation and consequently has no related tie flows. Otherwise, the interconnection is included in control area interchange and a TieFlow is required at all sides of the boundary point (default).",
+     "stereotypes": [
+      "European"
+     ],
+     "type_guid": "{9F8964F1-6C32-465b-A83D-F5A201A291C3}",
+     "type_name": "Boolean",
+     "upper": 1
+    }
+   ],
+   "deprecated": false,
+   "ea_id": 2004,
+   "guid": "{22106B32-87E4-4296-B0FC-1F9DB3D9D70A}",
+   "kind": "class",
+   "literals": [],
+   "name": "BoundaryPoint",
+   "namespace": "eu",
+   "notes": "Designates a connection point at which one or more model authority sets shall connect to. The location of the connection point as well as other properties are agreed between organisations responsible for the interconnection, hence all attributes of the class represent this agreement.  It is primarily used in a boundary model authority set which can contain one or many BoundaryPoint-s among other Equipment-s and their connections.",
+   "package": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase/ExtEuCore",
+   "stereotypes": [
+    "European"
+   ],
+   "superclass": "{0340C084-3759-40cc-AAF2-386101DE842F}"
+  },
+  {
+   "abstract": false,
+   "attributes": [],
+   "deprecated": false,
+   "ea_id": 2014,
+   "guid": "{52E21930-D9C8-4243-AF07-B57B20CE94B0}",
+   "kind": "class",
+   "literals": [],
+   "name": "WindPowerPlant",
+   "namespace": "eu",
+   "notes": "Wind power plant.",
+   "package": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase/ExtEuGeneration/ExtEuProduction",
+   "stereotypes": [
+    "European"
+   ],
+   "superclass": "{0340C084-3759-40cc-AAF2-386101DE842F}"
+  },
+  {
+   "abstract": false,
+   "attributes": [
+    {
+     "default": null,
+     "deprecated": false,
+     "ea_id": 5833,
+     "guid": "{1D8E1417-DB69-48e1-894E-45D2FCA2C06F}",
+     "is_const": false,
+     "is_static": false,
+     "lower": 0,
+     "name": "energyIdentCodeEic",
+     "namespace": "eu",
+     "notes": "The attribute is used for an exchange of the EIC code (Energy identification Code). The length of the string is 16 characters as defined by the EIC code. For details on EIC scheme please refer to ENTSO-E web site.",
+     "stereotypes": [
+      "European"
+     ],
+     "type_guid": "{E50DF78B-84CE-42e9-A275-A956DEF45490}",
+     "type_name": "String",
+     "upper": 1
+    },
+    {
+     "default": null,
+     "deprecated": false,
+     "ea_id": 5834,
+     "guid": "{2ADE284C-35EB-4009-AA99-98FCD8A47CD5}",
+     "is_const": false,
+     "is_static": false,
+     "lower": 0,
+     "name": "shortName",
+     "namespace": "eu",
+     "notes": "The attribute is used for an exchange of a human readable short name with length of the string 12 characters maximum.",
+     "stereotypes": [
+      "European"
+     ],
+     "type_guid": "{E50DF78B-84CE-42e9-A275-A956DEF45490}",
+     "type_name": "String",
+     "upper": 1
+    }
+   ],
+   "deprecated": false,
+   "ea_id": 2005,
+   "extends": "{055C5806-E9D8-4a7a-9307-DAF7C31763C7}",
+   "guid": "{B1417572-E1B1-4069-8EAA-409FC370AB98}",
+   "kind": "class",
+   "literals": [],
+   "name": "ExtEuIdentifiedObject",
+   "namespace": "eu",
+   "notes": "Contains attributes to allow for mappings between different European identification schemes.",
+   "package": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase/ExtEuCore",
+   "stereotypes": [
+    "European",
+    "ShadowExtension"
+   ],
+   "superclass": null
+  },
+  {
+   "abstract": false,
+   "attributes": [],
+   "deprecated": false,
+   "ea_id": 2009,
+   "guid": "{C6901289-57C7-41a3-AF87-9AA5E788E1CF}",
+   "kind": "enumeration",
+   "literals": [
+    {
+     "ea_id": 5836,
+     "guid": "{8AB805EE-91D7-4c90-B074-A2A04D8C36EE}",
+     "name": "patl",
+     "notes": "The Permanent Admissible Transmission Loading (PATL) is the loading in amperes, MVA or MW that can be accepted by a network branch for an unlimited duration without any risk for the material.\nThe OperationnalLimitType.isInfiniteDuration is set to true. There shall be only one OperationalLimitType of kind PATL per OperationalLimitSet if the PATL is ApparentPowerLimit, ActivePowerLimit, or CurrentLimit for a given Terminal or Equipment.",
+     "value": null
+    },
+    {
+     "ea_id": 5837,
+     "guid": "{76E1A5E7-170C-433b-A046-DE41B5AC09E2}",
+     "name": "patlt",
+     "notes": "Permanent Admissible Transmission Loading Threshold  (PATLT) is a value in engineering units defined for PATL and calculated using a percentage less than 100 % of the PATL type intended to alert operators of an arising condition. The percentage should be given in the name of the OperationalLimitSet. The aceptableDuration is another way to express the severity of the limit.",
+     "value": null
+    },
+    {
+     "ea_id": 5838,
+     "guid": "{7B880D50-ED6E-425e-A5D1-2060BE97ABC4}",
+     "name": "tatl",
+     "notes": "Temporarily Admissible Transmission Loading (TATL) which is the loading in amperes, MVA or MW that can be accepted by a branch for a certain limited duration.\nThe TATL can be defined in different ways:\n\n- as a fixed percentage of the PATL for a given time (for example, 115% of the PATL that can be accepted during 15 minutes),\n\n\n- pairs of TATL type and Duration calculated for each line taking into account its particular configuration and conditions of functioning (for example, it can define a TATL acceptable during 20 minutes and another one acceptable during 10 minutes).\n\nSuch a definition of TATL can depend on the initial operating conditions of the network element (sag situation of a line).\nThe duration attribute can be used to define several TATL limit types. Hence multiple TATL limit values may exist having different durations.",
+     "value": null
+    },
+    {
+     "ea_id": 5839,
+     "guid": "{DC2D2E83-80B7-4019-98FF-C8AE645BF87C}",
+     "name": "tc",
+     "notes": "Tripping Current (TC) is the ultimate intensity without any delay. It is defined as the threshold the line will trip without any possible remedial actions.\nThe tripping of the network element is ordered by protections against short circuits or by overload protections, but in any case, the activation delay of these protections is not compatible with the reaction delay of an operator (less than one minute).\nThe duration is always zero if the OperationalLimitType.acceptableDuration is exchanged. Only one limit value exists for the TC type.",
+     "value": null
+    },
+    {
+     "ea_id": 5840,
+     "guid": "{982F6E9A-E286-49f4-A193-CD4047E92DA1}",
+     "name": "tct",
+     "notes": "Tripping Current Threshold  (TCT) is a value in engineering units defined for TC and calculated using a percentage less than 100 % of the TC type intended to alert operators of an arising condition. The percentage should be given in the name of the OperationalLimitSet. The aceptableDuration is another way to express the severity of the limit.",
+     "value": null
+    },
+    {
+     "ea_id": 5841,
+     "guid": "{1726CA68-FB1E-4cf5-AB18-9F19C125199E}",
+     "name": "highVoltage",
+     "notes": "Referring to the rating of the equipments, a voltage too high can lead to accelerated ageing or the destruction of the equipment.\nThis limit type may or may not have duration.",
+     "value": null
+    },
+    {
+     "ea_id": 5842,
+     "guid": "{14D97850-6285-4841-BBCA-98D298B687E8}",
+     "name": "lowVoltage",
+     "notes": "A too low voltage can disturb the normal operation of some protections and transformer equipped with on-load tap changers, electronic power devices or can affect the behaviour of the auxiliaries of generation units.\nThis limit type may or may not have duration.",
+     "value": null
+    },
+    {
+     "ea_id": 5843,
+     "guid": "{7502FAC7-2D75-495e-A450-D6542BD7A5F6}",
+     "name": "operationalVoltageLimit",
+     "notes": "Operational voltage limit.",
+     "value": null
+    },
+    {
+     "ea_id": 5844,
+     "guid": "{4ED16EE9-8325-4e15-A7DB-05D14B06C47C}",
+     "name": "alarmVoltage",
+     "notes": "Voltage alarm.",
+     "value": null
+    },
+    {
+     "ea_id": 5845,
+     "guid": "{6623D1B4-9D68-404c-BEE9-E2BD7A4A4647}",
+     "name": "warningVoltage",
+     "notes": "Voltage warning.",
+     "value": null
+    },
+    {
+     "ea_id": 5846,
+     "guid": "{50F7F330-A1F2-4075-B015-41EAD39703A7}",
+     "name": "stability",
+     "notes": "Stability.",
+     "value": null
+    }
+   ],
+   "name": "LimitKind",
+   "namespace": "eu",
+   "notes": "Limit kinds.",
+   "package": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase/ExtEuOperationalLimits",
+   "stereotypes": [
+    "enumeration",
+    "European"
+   ],
+   "superclass": null
+  },
+  {
+   "abstract": false,
+   "attributes": [],
+   "deprecated": false,
+   "ea_id": 2013,
+   "guid": "{FCAC387C-33C5-4446-AD70-4E6B02809D92}",
+   "kind": "class",
+   "literals": [],
+   "name": "SolarPowerPlant",
+   "namespace": "eu",
+   "notes": "Solar power plant.",
+   "package": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase/ExtEuGeneration/ExtEuProduction",
+   "stereotypes": [
+    "European"
+   ],
+   "superclass": "{0340C084-3759-40cc-AAF2-386101DE842F}"
+  }
+ ],
+ "packages": [
+  {
+   "ea_id": 92,
+   "guid": "{3593D1DA-0DC7-46f0-B8A1-37DA93912939}",
+   "name": "EuropeanCIMExtensions",
+   "notes": "The package contains the European  extensions to canonical CIM model.",
+   "parent": null,
+   "path": "EuropeanCIMExtensions"
+  },
+  {
+   "ea_id": 115,
+   "guid": "{F98BD9A1-D05C-43ed-BB33-B476E4B34588}",
+   "name": "ExtIEC61970",
+   "notes": "This package contains the European extensions to IEC61970 package of canonical CIM model.",
+   "parent": "EuropeanCIMExtensions",
+   "path": "EuropeanCIMExtensions/ExtIEC61970"
+  },
+  {
+   "ea_id": 116,
+   "guid": "{1A524180-24A3-4d4f-A866-E5B6569AF009}",
+   "name": "ExtEuBase",
+   "notes": "This package contains the European extensions to Base package of the canonical CIM model.",
+   "parent": "EuropeanCIMExtensions/ExtIEC61970",
+   "path": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase"
+  },
+  {
+   "ea_id": 117,
+   "guid": "{193076B0-A4A2-43e4-AE90-0F30F0D1DC1B}",
+   "name": "ExtEuCore",
+   "notes": "European extensions to Core package.",
+   "parent": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase",
+   "path": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase/ExtEuCore"
+  },
+  {
+   "ea_id": 119,
+   "guid": "{C896DC16-1BF0-42e1-9B82-11A686C1229D}",
+   "name": "ExtEuGeneration",
+   "notes": "European extensions to Generation package.",
+   "parent": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase",
+   "path": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase/ExtEuGeneration"
+  },
+  {
+   "ea_id": 120,
+   "guid": "{061CCCCA-378D-499e-8058-FFC2AA31C2D0}",
+   "name": "ExtEuProduction",
+   "notes": "European extensions to Production package.",
+   "parent": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase/ExtEuGeneration",
+   "path": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase/ExtEuGeneration/ExtEuProduction"
+  },
+  {
+   "ea_id": 118,
+   "guid": "{50E7758A-A6FC-4e3c-B123-BECC92C5DBA5}",
+   "name": "ExtEuOperationalLimits",
+   "notes": "European extensions to OperationalLimits package.",
+   "parent": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase",
+   "path": "EuropeanCIMExtensions/ExtIEC61970/ExtEuBase/ExtEuOperationalLimits"
+  }
+ ],
+ "stats": {
+  "connectors_association": 3,
+  "extensions": 2,
+  "generalizations": 3,
+  "generalizations_skipped_out_of_scope": 1
+ },
+ "unresolved_types": [],
+ "versions": {
+  "ExtIEC61970Version": "3.0"
+ }
+}

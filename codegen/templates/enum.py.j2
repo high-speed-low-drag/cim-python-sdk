@@ -1,0 +1,30 @@
+"""{{ header }}"""
+
+from __future__ import annotations
+
+from enum import nonmember
+
+from cim_python_sdk._runtime import CimEnum, ClassMeta
+
+
+class {{ name }}(CimEnum):
+    {{ doc }}
+
+{% for lit in literals %}
+    {{ lit.name }} = {{ lit.value }}
+{% endfor %}
+
+    _cim_meta = nonmember(
+        ClassMeta(
+            cim_name={{ cim_name }},
+            package={{ package }},
+            guid={{ guid }},
+            kind="enumeration",
+{% if deprecated %}
+            deprecated=True,
+{% endif %}
+{% if namespace %}
+            namespace={{ namespace }},
+{% endif %}
+        )
+    )
